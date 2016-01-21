@@ -1,1 +1,1 @@
-web: gunicorn bares.wsgi --log-file -
+web: gunicorn rango.wsgi --log-file -
