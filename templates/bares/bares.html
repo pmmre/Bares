@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+
+    {% if bar %}
+    <h1> {{bar.nombre_bar}}</h1>
+    <p> {{bar.descripcion_bar}}</p>
+    {% load easy_maps_tags %}
+    {% easy_map bar.direccion 350 400 %}
+    <p> {{bar.direccion}}</p>
+    <h2> Tiene las siguientes tapa:</h2>
+    {% else %}
+    <h2> No existe el bar {{bar.nombre_bar}}. </h2>  
+    {% endif %}
+
+    <script> contador=1</script>
+    <ul>
+    {% for tapa in bar.tapas.all%}
+
+        <li>
+           <p> {{tapa}} y tiene <span id="Megusta"> {{tapa.votos}} </span> votos </p>
+            <img  class="imagen_tapa" src = "/static/images/{{tapa.imagen}}"  alt = "/static/images/{{tapa.imagen}}" />
+            <button id="Megusta" class="Megusta" value="{{tapa}}"> Me gusta </button>
+        
+        </li>
+        <script> 
+            document.getElementById("Megusta").id = "Megusta"+contador;
+            document.getElementById("Megusta").id = "Megusta"+contador;
+            contador=contador+1;
+        </script>
+
+    {% endfor%}
+    </ul>
+    <p id="chequeo"> no sale nada<p>
+
+    
+
+
+
+{% endblock %}
+
+
+
+

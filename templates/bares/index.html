@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block contenido %}
+
+{% if user.is_authenticated %}
+<h1>Rango says... hello {{ user.username }}!</h1>
+{% else %}
+<h1>Rango says... hello world!</h1>
+{% endif %}
+
+        <img  src = "/static/images/rango.jpg"  alt = "Imagen de Rango"  />  
+
+
+
+
+
+
+
+        {% if bares %}
+            <br> </br>
+            <ul> <b> Bares </b>
+                {% for bar in bares %}
+                <li><a href="bar/{{bar.slug}}">{{ bar.nombre_bar }} </a>  Visitas {{bar.num_visitas}}</li>
+                {% for tapa in bar.tapas.all %}
+                	<p>   - {{tapa.nombre_tapa}} </p>
+                {% endfor %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p> <strong> No hay bares</strong> </p>
+        {% endif %}
+
+        {% if tapas %}
+            <ul> <b> Tapas </b>
+                {% for tapa in tapas %}
+                <li>{{ tapa.nombre_tapa }}</li>
+                
+                <img  class="imagen_tapa" src = "/static/images/{{tapa.imagen}}"  alt = "/static/images/{{tapa.imagen}}" /> 
+                {% endfor %}
+                <br>
+            </ul>
+        {% else %}
+            <strong> No hay tapas</strong>
+        {% endif %}
+
+
+        <div id="container" style="height: 300px"></div>
+
+
+
+{% endblock %}
