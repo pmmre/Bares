@@ -17,17 +17,17 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h27xhcx6&6dtem=@&z($t*73)1(&-&ico--17_21+(yvv7c_t@'
+#SECRET_KEY = 'h27xhcx6&6dtem=@&z($t*73)1(&-&ico--17_21+(yvv7c_t@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
 from unipath import Path
 RUTA_PROYECTO = Path(__file__).ancestor(2)
@@ -36,17 +36,17 @@ ALLOWED_HOSTS = ['*']
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #import os
 import django
-#BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'r%4)vjbf#=g_t#v6612lj5xit4%_3w*jces_6_o+j6#k)!2ot&'
+SECRET_KEY = 'r%4)vjbf#=g_t#v6612lj5xit4%_3w*jces_6_o+j6#k)!2ot&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
