@@ -28,21 +28,10 @@ Esto no sólo sirve para testear nuestro código sino que también podemos combi
 
 
 ## Despliegue de la aplicación en el PaaS Heroku
-En esta parte he selecciona heroku y snap-ci para realizar el despliegue. Lo he ralizado exactamente igual que en los ejercicios del tema 3 ( [Ejercicios tema 3](https://github.com/JJ/IV-2015-16/blob/master/ejercicios/PabloMartin-MorenoRuiz/Tema3.md) ) 
+Ahora toca desplegar de una forma sencilla en un PaaS cómo Heroku, éste ha sido mi elección a que es fácil desplegarlo combinándolo con github .
 
 [Podemos ver funcionando esta aplicación en heroku](http://infinite-sierra-84562.herokuapp.com/)
 
-En mis ejercicios viene explicado cómo he configurado la apliación para su despliegue, en está simplemente he cambiado la línea 
-```
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Empresas.settings")
-```
-por esta otra:
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Activento.settings")
-
-en el archivo wsgi
-
-y algo similar en el Procfile.
 
 Aquí se explicará un breve resumen de cómo se hizo un despliegue en el PaaS Heroku:
 
