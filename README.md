@@ -1,5 +1,5 @@
 # Activento-PabloMartin-MorenoRuiz   
-[![Build Status](https://travis-ci.org/pmmre/Activento-PabloMartin-MorenoRuiz.svg)](https://travis-ci.org/pmmre/Activento-PabloMartin-MorenoRuiz)
+[![Build Status](https://travis-ci.org/pmmre/Bares.svg?branch=master)](https://travis-ci.org/pmmre/Bares)
 
 ## Descripción de la aplicación 
 ### Supuesta aplicación final
