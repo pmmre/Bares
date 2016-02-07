@@ -18,28 +18,16 @@ La aplicación gestiona diversos bares y las tapas que tiene cada uno. En la inf
 - Azure como IaaS
 
 ### Integración continua: Primero paso el testeo (Travis)
-Para comprobar que nuestro código funciona perfectamente lo primero tenemos que generar unos test en el lenguaje que desarrollemos. En este casa he usado el testeo desarrollado por pyhton.
+Para comprobar que nuestro código funciona perfectamente lo primero tenemos que generar unos test en el lenguaje que desarrollemos. En este casa he usado el testeo desarrollado por Django.
 
 Esto consiste en unos test almacenados en el archivo tests.py de nuestro proyecto que se ejecutan con python manage.py test.
 
-Esto no sólo sirve para testear nuestro código sino que también podemos combinarlo con Travis para que cada vez que hagamos un push a nuestro repositorio nos ejecute los test para ello ejecuta el siguiente archivo [.travis.yml](https://github.com/pmmre/Bares/blob/master/.travis.yml)
+Esto no sólo sirve para testear nuestro código sino que también podemos combinarlo con Travis para que cada vez que hagamos un push a nuestro repositorio nos ejecute los test para ello ejecuta el siguiente archivo [.travis.yml](https://github.com/pmmre/Bares/blob/master/.travis.yml). Gracias a esta posibilidad si varios programadores o incluso uno mismo comete un error evita que pueda llevarse a producción siendo detectado previamente.
 
 
-### Desarrollo de la aplicación en local
-En está práctica como elegí python se desplegará la infraestructura virtual con virtualenv, instalaremos todos las herramientas necesarias. Y personalmente realizaré algunos test que verifiquen el código.
 
-Al final me he dedicado a aprender Django bastante bien, he creardo la aplicacion hasta crear usuarios, listarlos, crear categorías y verlas...
-He creado los test de todas las vistas creadas.
 
-He comentado views.py y test.py con la herramiento pycco he creado un html en el que se ve su contenido
-
-Para ejecutar todos los test juntos he usado python manage.py test que es igual que usar la herramienta nosetest
-
-Y para la integración contigo he usado TRAVIS, me he registrado y le he indicado a que repositorio tiene que aplicarle la integración continua, he compiado el archivo requirementes.txt necesario para que TRAVIS instale la máquina virtual y añadidido el archivo .travis.yml configurandolo apropiadamente y por ultimo al línea siguiente que me comprueba que funciona
-
-[![Build Status](https://travis-ci.org/pmmre/Activento-PabloMartin-MorenoRuiz.svg)](https://travis-ci.org/pmmre/Activento-PabloMartin-MorenoRuiz)
-
-## Desplieqgue de la aplicación en el PaaS Heroku
+## Despliegue de la aplicación en el PaaS Heroku
 En esta parte he selecciona heroku y snap-ci para realizar el despliegue. Lo he ralizado exactamente igual que en los ejercicios del tema 3 ( [Ejercicios tema 3](https://github.com/JJ/IV-2015-16/blob/master/ejercicios/PabloMartin-MorenoRuiz/Tema3.md) ) 
 
 [Podemos ver funcionando esta aplicación en heroku](http://infinite-sierra-84562.herokuapp.com/)
