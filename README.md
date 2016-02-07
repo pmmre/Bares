@@ -84,23 +84,14 @@ static_root nos hace falta para los fichero estaticos que se se crean al usar py
 Cómo estoy usando base de datos base de datos modifico la configuración del settings para la base de datos por la siguiente:
 ```
 ON_HEROKU = os.environ.get('ON_HEROKU')
-
 if ON_HEROKU:
-
     DATABASES = {'default' : dj_database_url.config() }
-
 else:
-
     DATABASES = {
-
         'default': {
-
             'ENGINE': 'django.db.backends.sqlite3',
-
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-
         }
-
     }
 ```
 
