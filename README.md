@@ -1,17 +1,19 @@
-# Activento-PabloMartin-MorenoRuiz   
+# Aplicación bares   
 [![Build Status](https://travis-ci.org/pmmre/Bares.svg?branch=master)](https://travis-ci.org/pmmre/Bares)
 
 ## Descripción de la aplicación 
 ### Supuesta aplicación final
-La aplicación consiste en una red social de eventos y actividades en las que uno se registra como usuario y añade las categorías (tipos de cosas que le interesan) en las que se perfila,puediendo añadir nuevas categorías a la lista de categorías globales.
-
-Un usuario podrá tener una lista de amigos agregándolos mandándoles peticiones de amista, está lista de amigos le sirve para poder invitarlos a eventos privados (en los que no son visibles para todos y sólo el administrador podrá añadir más gente), también se podrán seguir empresas y poder ver sus ofertas.
-
-La mayor utilidad de la web se basara en los eventos que en principio podremos crear eventos de varios tipos básicos que el administrador podrá modificar. El administrador podrá indicar si se permiten comentarios, si se permiten listas de usuarios con tope, pudiendo elegir si en la lista se apuntas el resto de la gente que estuvirá en la lista suplente (por ejemplo, una peña de futbol, que cuando fallé uno se incorporé el sigueinte en la lista), o incluso listas con número de asistentes (reserva de un restaurante) o eventos sencillos (como ofertas de las empresas y promociones de comida o deporte,o lo que sea...)
-
-Habrá una gestión para las empresas  con diversas opciones algo distintas de las de los usuarios normales.
+La aplicación gestiona diversos bares y las tapas que tiene cada uno. En la información de cada bar podemos ver una descripción del local y su localización en un mapa. Cada tapa permite se votada y también se propociona una gráfica de los bares más visitados.
  
 
+### Infraestructura
+- Framework de alto nivel Django
+- Como soporte persistente de los datos Sqlite3 y PostgreSQL
+- Testeo de la aplicación con Travis.
+- Integración continua con Snap-ci (junto a Travis)
+- Heroku como PaaS
+- Docker como entorno de desarrollo
+- Azure como IaaS
 
 
 
