@@ -1,6 +1,8 @@
 # Aplicación bares   
 [![Build Status](https://travis-ci.org/pmmre/Bares.svg?branch=master)](https://travis-ci.org/pmmre/Bares)
 
+[![Build Status](https://snap-ci.com/pmmre/Bares/branch/master/build_image)](https://snap-ci.com/pmmre/Bares/branch/master)
+
 ## Descripción de la aplicación 
 ### Supuesta aplicación final
 La aplicación gestiona diversos bares y las tapas que tiene cada uno. En la información de cada bar podemos ver una descripción del local y su localización en un mapa. Cada tapa permite se votada y también se propociona una gráfica de los bares más visitados.
@@ -106,7 +108,7 @@ Y otro fallo que me costó ver es no ejecutar python manage.py collectstatic ant
 
 Introduciendonos en Snap-ci podemos ver la lista de nuestros proyectos a los que queremos hacerle cauces (pipelines). En este caso se ha diseñado para que el código una vez introducido en github y pasado travis nos lo mande a heroku.
 
-Introducimos el repositorio que queramos en el pipeline, seleccionamos heroku de entre los Deploy y uan vez hecho esto lo configuramos cómo se muestra en la siguiente imagen:
+Introducimos el repositorio que queramos en el pipeline, seleccionamos heroku de entre los Deploy y una vez hecho esto lo configuramos cómo se muestra en la siguiente imagen:
 
 ![configuracion_heroku](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Seleccioacuten_015_zpsb29areco.png)
 
