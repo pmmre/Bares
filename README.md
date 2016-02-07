@@ -146,19 +146,24 @@ Y ahora cada vez que hagamos un push en github, se crearán imagenes en dockerhu
 ![ejecucion_en_dockerhub](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/Seleccioacuten_042_zpslsgjzvqp.png)
 
 ### Ansible
-Este ejercicio también lo he realizadocon Koding sobre lo que tengo en la máquina de azure (como siempre que hago algo en azure ya que azure-cli no funciona en mi equipo).
+Ansible es un aprovisionador muy útil y que he selecionado porque en un solo archivo bien configurado tenemos todo lo necesario para que la aplicación funciona en una nueva máquina.
 
-Copiarmos la dirección de la máquina en el siguiente archivo (en este caso el DNS):
+Ansible funciona a través de ssh y para que lo haga correctemente debemos de darle la llave pública de la máquina desde la que queremos provisionar a la máquina a la que provisionaremos. Si no tenemos generadas las llaves las generamos con ```ssh-keygen -t dsa ``` y las enviamos a la máquina con la siguiente orden:
+```
+ssh-copy-id -i .ssh/id_dsa.pub UsuarioMaquinarRemota@maquinaRemota(DNS o IPI)
+```
 
-![ansible_hosts](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_067_zpslwq7ypde.png)
+Copiarmos la dirección de la máquina en el siguiente archivo:
+
+![ansible_hosts](http://i393.photobucket.com/albums/pp14/pmmre/PracticaFinal/Seleccioacuten_076_zpsm1m1myyh.png)
 
 Instroducimos todo lo que se necesita instalar en un archivo .yml
 
-![yml](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_068_zpscm83tuxx.png)
+![yml](http://i393.photobucket.com/albums/pp14/pmmre/PracticaFinal/Seleccioacuten_077_zpseallz1cg.png)
 
 Y lo ejecutamos con la siguiente orden ```ansible-playbook -u pablo calificaciones.yml ``` y ya tenemos todo listo para ejecutar.
 
-Podemos ver que de está forma es muy útil, mucho menos engorrosa que la del ejercicio anterior y lo más importante que de un comando isntalamos lo encesario. En el ejercicio 8 veremos cómo hacer esto lanzándolo desde vagrant.
+En este caso tenemos que enviar nuestra llave pública a la máquina destino pero con vagrant lo gestionamos con certificados.
 
 
 ### Vagrant
