@@ -82,7 +82,7 @@ setting hay que configurarlo introduciendo los siguientes parámetros:
 static_root nos hace falta para los fichero estaticos que se se crean al usar python manage.py collectstatic que usa heroku para ejecutarlo localmente.
 
 Cómo estoy usando base de datos base de datos modifico la configuración del settings para la base de datos por la siguiente:
-
+```
 ON_HEROKU = os.environ.get('ON_HEROKU')
 
 if ON_HEROKU:
@@ -102,7 +102,7 @@ else:
         }
 
     }
-
+```
 
 Con esto lo que hago es que si esto en un entorno que no sea heroku ejecuto sqlite3 pero si estoy en heroku utilizo postgressql cómo él me indica.
 
