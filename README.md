@@ -15,6 +15,12 @@ La aplicación gestiona diversos bares y las tapas que tiene cada uno. En la inf
 - Docker como entorno de desarrollo
 - Azure como IaaS
 
+### Integración continua: Primero paso el testeo (Travis)
+Para comprobar que nuestro código funciona perfectamente lo primero tenemos que generar unos test en el lenguaje que desarrollemos. En este casa he usado el testeo desarrollado por pyhton.
+
+Esto consiste en unos test almacenados en el archivo tests.py de nuestro proyecto que se ejecutan con python manage.py test.
+
+Esto no sólo sirve para testear nuestro código sino que también podemos combinarlo con Travis para que cada vez que hagamos un push a nuestro repositorio nos ejecute los test para ello ejecuta el siguiente archivo [.travis.yml](https://github.com/pmmre/Bares/blob/master/.travis.yml)
 
 
 ### Desarrollo de la aplicación en local
