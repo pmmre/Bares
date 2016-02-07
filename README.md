@@ -43,7 +43,10 @@ La primera parte es la instalación de los paquetes necesarios y registrarse y d
 - Una vez realizadas todas las intalaciones nos loguemaos en heroku introduciendo heroku login y dándole los datos que nos pidan.
 
 Hay que modificar 3 archivos en el proyecto para que funcione correctamente:
-- Procfile hay que introducirlo y ponerle la siguiente línea web: gunicorn Activento.wsgi --log-file - . Teniendo en cuenta que Activento es el nombre de nuestro proyecto.
+- Procfile hay que introducirlo y ponerle la siguiente línea:
+```
+ web: gunicorn bares.wsgi --log-file - . 
+```
 - Dentro de la carpeta de configuraciones en el archivo de wsgi hay que introducir lo siguiente:
 
 ```
@@ -87,7 +90,7 @@ Introduciendonos en Snap-ci podemos ver la lista de nuestros proyectos a los que
 
 Introducimos el repositorio que queramos en el pipeline, seleccionamos heroku de entre los Deploy y una vez hecho esto lo configuramos cómo se muestra en la siguiente imagen:
 
-![configuracion_heroku](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Seleccioacuten_015_zpsb29areco.png)
+![configuracion_snap-ci](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_072_zpsmtkwktnk.png)
 
 ### Dockerhub
 
