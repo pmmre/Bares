@@ -85,6 +85,7 @@ Y otro fallo que me costó ver es no ejecutar python manage.py collectstatic ant
 
 
 ### Despliege a Travis y encauzado a heroku con snap-ci
+Nuestra apliación ya tiene test controlado por Travis y también hemos diseñado un despliegue con Heroku pero ahora lo que hacemos en primero comprobar los test con Travis y después desplegarlo con Heroku, todo esto controlado con snap-ci
 
 Introduciendonos en Snap-ci podemos ver la lista de nuestros proyectos a los que queremos hacerle cauces (pipelines). En este caso se ha diseñado para que el código una vez introducido en github y pasado travis nos lo mande a heroku.
 
@@ -106,9 +107,9 @@ Una vez hecho eso enlazamos con github:
 
 ![enlazar3](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/Seleccioacuten_035_zps45kkipb8.png)
 
-Una vez hecho lo esto, selecionamos los repositorios en los que queremos que funcione docker, en este caso Activente y obtendremos su panel para controlarlo:
+Una vez hecho lo esto, selecionamos los repositorios en los que queremos que funcione docker, en este caso Bares y obtendremos su panel para controlarlo:
 
-![seleccion](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/Seleccioacuten_036_zpsstmivb0f.png)
+![seleccion](http://i393.photobucket.com/albums/pp14/pmmre/PracticaFinal/Seleccioacuten_073_zps3lxm4f7l.png)
 
 Ahora lo que hay que hacer es un archivo Dockerfile el directorio de nuestra aplicacioón, simplemente con esto instalamos todo lo necesario para que funcion:
 
