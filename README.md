@@ -163,3 +163,90 @@ Vemos ejecutándose nuestra web en el navegador:
 Y ahora cada vez que hagamos un push en github, se crearán imagenes en dockerhub:
 
 ![ejecucion_en_dockerhub](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/Seleccioacuten_042_zpslsgjzvqp.png)
+
+### Ansible
+Este ejercicio también lo he realizadocon Koding sobre lo que tengo en la máquina de azure (como siempre que hago algo en azure ya que azure-cli no funciona en mi equipo).
+
+Copiarmos la dirección de la máquina en el siguiente archivo (en este caso el DNS):
+
+![ansible_hosts](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_067_zpslwq7ypde.png)
+
+Instroducimos todo lo que se necesita instalar en un archivo .yml
+
+![yml](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_068_zpscm83tuxx.png)
+
+Y lo ejecutamos con la siguiente orden ```ansible-playbook -u pablo calificaciones.yml ``` y ya tenemos todo listo para ejecutar.
+
+Podemos ver que de está forma es muy útil, mucho menos engorrosa que la del ejercicio anterior y lo más importante que de un comando isntalamos lo encesario. En el ejercicio 8 veremos cómo hacer esto lanzándolo desde vagrant.
+
+
+### Vagrant
+
+En este apartado final lo realizaré también desde Koding.
+
+El primer paso es instalar el provisionador de azure para vagrant:
+
+![Aprovisonador](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_050_zpsvxmtdchd.png)
+
+
+El siguiente paso es loguearme y una vez hecho obtener mis credenciales de Azure:
+
+![obtenerCredenciales](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_051_zpspqzjlxbr.png)
+
+Acto seguido importo a mi CLI de Azure mis credenciales:
+
+![importAzure](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_053_zpssp9u9uua.png)
+
+El siguiente paso es generar los certificados que se van a subir a Azure y que nos permitan interaccionar con él.
+```
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout azurevagrant.key -out azurevagrant.key
+chmod 600 ~/.ssh/azurevagrant.key
+openssl x509 -inform pem -in azurevagrant.key -outform der -out azurevagrant.cer
+```
+
+![GenerarCertificado](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_055_zpszkwntudy.png)
+
+Cómo Koding no tengo entorno gráfico mediante ssh obtengo el certificado en mi máquina local:
+
+![ObtenerCertificadoSSH](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_057_zpsr9kncfyy.png)
+
+Introduzco el certificado en Azure:
+
+![IntroducirCertificado](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_058_zpsvyodbees.png)
+
+Para poder autenticar Azure desde Vagrantfile es necesario crear un archivo .pem y concatenarle el archivo .key, para ello:
+```
+openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azurevagrant.pem
+cat azurevagrant.key > azurevagrant.pem
+```
+
+Lo siguiente que hago es obtener el box de azure:
+
+![BoxAzure](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_059_zpstadryvbc.png)
+
+Ejecuto ```vagrant init azure```:
+
+![Init](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_060_zpsqppxlfyo.png)
+
+Lo siguiente que hay que hacer es configurar Vagrantfile cómo se muestra en la siguiente iamgen.Hay que destacarq que de los 3 bloques el primero siver para configurar la red de la máquina, el segundo para configurar la instalación del sistema operativo y el tercero para provisonarlo con ansible:
+
+![Vagrantfile](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_069_zpsz3ohrofm.png)
+
+En ansible incluimos todo lo necesario para que funcione nuestro programa:
+
+![ansible](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_070_zpsgyc9ngrn.png)
+
+Y con el siguiente comando nos disponemos a lanzar ansible para que cre la maquina y por último que nos ejecute ansible (provisionar) para que funcione todo:
+![Lanzar](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_062_zpsi1tkujtp.png)
+
+
+Y podemos ver que funciona perfectamente:
+![PERFECT](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_071_zpsciwvn5pz.png)
+
+Podemos ejecutar algunos comando de vagrant útiles:
+
+```vagrant up``` Sólo crear la máquina.
+
+```vagrant provision``` Sólo provisionarla
+
+```vagrant suspend``` Apagarla
