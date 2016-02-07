@@ -40,12 +40,12 @@ Y para la integración contigo he usado TRAVIS, me he registrado y le he indicad
 ## Desplieqgue de la aplicación en el PaaS Heroku
 En esta parte he selecciona heroku y snap-ci para realizar el despliegue. Lo he ralizado exactamente igual que en los ejercicios del tema 3 ( [Ejercicios tema 3](https://github.com/JJ/IV-2015-16/blob/master/ejercicios/PabloMartin-MorenoRuiz/Tema3.md) ) 
 
-[Podemos ver funcionando esta aplicación en heroku](https://mysterious-spire-2156.herokuapp.com/)
+[Podemos ver funcionando esta aplicación en heroku](http://infinite-sierra-84562.herokuapp.com/)
 
 En mis ejercicios viene explicado cómo he configurado la apliación para su despliegue, en está simplemente he cambiado la línea 
-
+```
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Empresas.settings")
-
+```
 por esta otra:
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Activento.settings")
@@ -67,14 +67,12 @@ Hay que modificar 3 archivos en el proyecto para que funcione correctamente:
 - Procfile hay que introducirlo y ponerle la siguiente línea web: gunicorn Activento.wsgi --log-file - . Teniendo en cuenta que Activento es el nombre de nuestro proyecto.
 - Dentro de la carpeta de configuraciones en el archivo de wsgi hay que introducir lo siguiente:
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Activento.settings")
-
+```
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "bares.settings")
 from django.core.wsgi import get_wsgi_application
-
 from dj_static import Cling
-
 application = Cling(get_wsgi_application())
-
+```
 En el caso de no usar Cling no nos funcionarán los CSS.
 
 setting hay que configurarlo introduciendo los siguientes parámetros:
