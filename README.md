@@ -208,3 +208,8 @@ Podemos ejecutar algunos comando de vagrant útiles:
 ```vagrant provision``` Sólo provisionarla
 
 ```vagrant suspend``` Apagarla
+
+### Fabric
+Fabric es una biblioteca de Python para automatizar tareas de administración haciendo uso de SSH, con ella se puede crear un entorno de pruebas en una máquina virtual de Azure.
+
+[fabfile.py](https://github.com/pmmre/Bares/blob/master/fabfile.py)
