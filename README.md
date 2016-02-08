@@ -1,4 +1,7 @@
 # Aplicación bares   
+
+## Autor: Pablo Martín-Moreno Ruiz
+
 [![Build Status](https://travis-ci.org/pmmre/Bares.svg?branch=master)](https://travis-ci.org/pmmre/Bares)
 
 [![Build Status](https://snap-ci.com/pmmre/Bares/branch/master/build_image)](https://snap-ci.com/pmmre/Bares/branch/master)
