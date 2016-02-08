@@ -168,7 +168,7 @@ En este caso tenemos que enviar nuestra llave pública a la máquina destino per
 
 ### Vagrant
 
-En este apartado final lo realizaré también desde Koding.
+Vagrant sirve para crear máquinas virtuales nuevas remotamente (o localmente) y también para provisonar una máquina pero aqui se combina vagrant con ansible como provionador.
 
 El primer paso es instalar el provisionador de azure para vagrant:
 
@@ -192,11 +192,7 @@ openssl x509 -inform pem -in azurevagrant.key -outform der -out azurevagrant.cer
 
 ![GenerarCertificado](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_055_zpszkwntudy.png)
 
-Cómo Koding no tengo entorno gráfico mediante ssh obtengo el certificado en mi máquina local:
-
-![ObtenerCertificadoSSH](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_057_zpsr9kncfyy.png)
-
-Introduzco el certificado en Azure:
+Introducir el certificado en Azure:
 
 ![IntroducirCertificado](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_058_zpsvyodbees.png)
 
@@ -206,28 +202,28 @@ openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out azur
 cat azurevagrant.key > azurevagrant.pem
 ```
 
-Lo siguiente que hago es obtener el box de azure:
+Lo siguiente es obtener el box de azure:
 
 ![BoxAzure](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_059_zpstadryvbc.png)
 
-Ejecuto ```vagrant init azure```:
+Ejecutar ```vagrant init azure```:
 
 ![Init](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_060_zpsqppxlfyo.png)
 
-Lo siguiente que hay que hacer es configurar Vagrantfile cómo se muestra en la siguiente iamgen.Hay que destacarq que de los 3 bloques el primero siver para configurar la red de la máquina, el segundo para configurar la instalación del sistema operativo y el tercero para provisonarlo con ansible:
+Lo siguiente que hay que hacer es configurar Vagrantfile cómo se muestra en la siguiente imagen.Hay que destacar que de los 3 bloques el primero sive para configurar la red de la máquina, el segundo para configurar la instalación del sistema operativo y el tercero para provisonarlo con ansible:
 
-![Vagrantfile](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_069_zpsz3ohrofm.png)
+![Vagrantfile](http://i393.photobucket.com/albums/pp14/pmmre/PracticaFinal/Seleccioacuten_078_zpsuali3gws.png)
 
 En ansible incluimos todo lo necesario para que funcione nuestro programa:
 
-![ansible](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_070_zpsgyc9ngrn.png)
+![ansible](http://i393.photobucket.com/albums/pp14/pmmre/PracticaFinal/Seleccioacuten_077_zpseallz1cg.png)
 
 Y con el siguiente comando nos disponemos a lanzar ansible para que cre la maquina y por último que nos ejecute ansible (provisionar) para que funcione todo:
 ![Lanzar](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_062_zpsi1tkujtp.png)
 
 
 Y podemos ver que funciona perfectamente:
-![PERFECT](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_071_zpsciwvn5pz.png)
+![PERFECT](http://i393.photobucket.com/albums/pp14/pmmre/PracticaFinal/Seleccioacuten_079_zpsjgjy7uvy.png)
 
 Podemos ejecutar algunos comando de vagrant útiles:
 
