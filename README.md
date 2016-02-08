@@ -197,7 +197,7 @@ Y con el siguiente comando nos disponemos a lanzar ansible para que cre la maqui
 ![Lanzar](http://i393.photobucket.com/albums/pp14/pmmre/IVEjercicios5y6/IVEjercicios6/IVEjercicios6/Seleccioacuten_062_zpsi1tkujtp.png)
 
 
-Y podemos ver que funciona perfectamente:
+[Podemos ver funcionando esta aplicación en Azure](http://bares-service-fqked.cloudapp.net/)
 ![PERFECT](http://i393.photobucket.com/albums/pp14/pmmre/PracticaFinal/Seleccioacuten_079_zpsjgjy7uvy.png)
 
 Podemos ejecutar algunos comando de vagrant útiles:
