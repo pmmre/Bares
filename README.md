@@ -111,39 +111,11 @@ Una vez hecho lo esto, selecionamos los repositorios en los que queremos que fun
 
 ![seleccion](http://i393.photobucket.com/albums/pp14/pmmre/PracticaFinal/Seleccioacuten_073_zps3lxm4f7l.png)
 
-Ahora lo que hay que hacer es un archivo Dockerfile el directorio de nuestra aplicacioón, simplemente con esto instalamos todo lo necesario para que funcion:
+Ahora lo que hay que hacer es un archivo Dockerfile el directorio de nuestra aplicación, simplemente con esto instalamos todo lo necesario para que funcion:
 
 ![Dockerfile_activento](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/Seleccioacuten_041_zps7f4z7yf2.png)
 
-Lo siguiente que tenemos que hacer es crear la imagen en local para comprobar que funciona y ejecutarla en un navegador, para desarollar esta parte con comodidad he instalado un entorno gráfico.
 
-Para probar que funciona correctamente ejecutamos en local el siguiente comando para contruir una imagen:
-
-![contruir_imagen](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/41.%20crear%20imagen_zps8udfqvul.jpg)
-
-Una vez contruida la imagen, comprobamos que se ha hecho:
-
-![imagen_construida](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/42.%20imagenes_zpsqtoaclih.jpg)
-
-Ahora ejecutamos la imagen::
-
-![ejecución_imagen](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/43.%20Ejecutar%20contenedor_zps4rjpqeoi.jpg)
-
-Necesitamos hace un ifconfig para ver la ip dentro de esta imagen:
-
-![ifconfig](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/44.%20ifconfig_zpslmkgqtr9.jpg)
-
-Y ejecutamos la aplicación:
-
-![ejecutar_aplicacion](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/45.%20runserver_zpszmrfkgxy.jpg)
-
-Vemos ejecutándose nuestra web en el navegador:
-
-![en_navegador](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/46.%20Ejecutando_zpsx7vwduwt.jpg)
-
-Y ahora cada vez que hagamos un push en github, se crearán imagenes en dockerhub:
-
-![ejecucion_en_dockerhub](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/Seleccioacuten_042_zpslsgjzvqp.png)
 
 ### Ansible
 Ansible es un aprovisionador muy útil y que he selecionado porque en un solo archivo bien configurado tenemos todo lo necesario para que la aplicación funciona en una nueva máquina.
