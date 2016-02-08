@@ -113,7 +113,7 @@ Una vez hecho lo esto, selecionamos los repositorios en los que queremos que fun
 
 Ahora lo que hay que hacer es un archivo Dockerfile el directorio de nuestra aplicación, simplemente con esto instalamos todo lo necesario para que funcion:
 
-![Dockerfile_activento](http://i393.photobucket.com/albums/pp14/pmmre/Practica3IV/Practica4IV/Practica4IV-2/Seleccioacuten_041_zps7f4z7yf2.png)
+![Dockerfile_bares](http://i393.photobucket.com/albums/pp14/pmmre/PracticaFinal/Seleccioacuten_080_zpsjc80rbi6.png)
 
 
 
