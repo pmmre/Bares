@@ -1,0 +1,27 @@
+- hosts: localhost
+  sudo: yes
+  remote_user: vagrant
+  tasks:
+  - name: Actualizar sistema base
+    apt: update_cache=yes upgrade=dist
+  - name: Instalar paquetes
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=python-pip state=present
+    apt: name=git state=present
+    apt: name=libjpeg-dev state=present
+  - name: Ins Pyp
+    action: apt pkg=python-pip
+  - name: Obtener aplicacion de git
+    git: repo=https://github.com/pmmre/Bares.git dest=Bares clone=yes force=yes
+  - name: Permisos de ejecucion
+    command: chmod -R +x Bares
+  - name: Instalamos Postgresql
+    command: sudo apt-get install -y libpq-dev python-dev
+  - name : Instalamos Pillow
+    command: sudo easy_install Pillow
+  - name: Instalar requisitos
+    command: sudo pip install -r requirements.txt
+  - name: ejecutar
+    command: nohup sudo python Bares/manage.py runserver 0.0.0.0:80
